@@ -1,11 +1,13 @@
-import time
+import time, os
 from network_sniff import get_interfaces, scan_ip
 from mitm import mitm_attack
 from GUI import GUI
 TIMEOUT = 0.5
 
 # Create gui
-
+if os.getuid()!=0:
+    print("please run as sudo user")
+    exit()
 gui = GUI()
 
 #select interface
@@ -18,7 +20,8 @@ for id,info in interfaces.items():
     interfaces_item.append(f"{info[0]} {info[1]}")
 gui.interface_combo["values"] = interfaces_item
 gui.mainloop()
-"""
+exit()
+
 interface = int(input("please choose an interface id:"))
 interface = interfaces[interface]
 print("choosed :",interface)
@@ -47,6 +50,6 @@ print(f"target2:{target2}")
 
 #perform mitm
 mitm_attack(target1,target2)
-"""
+
 #read modbus
 #write modbus
