@@ -1,4 +1,5 @@
 import time
+from network_sniff import get_interfaces, get_interface, scan_ip
 TIMEOUT = 0.5
 #select interface
 print("please choose an interface:")
