@@ -30,13 +30,14 @@ modbus_mitm 是一個工業控制（OT）網路連線的攻擊工具包，針對
 
 #### Requirement （外部工具）：
 
+- nmap
 - ettercap
 
 #### 開啟方式：
 
 **程式還處於開發初期，須照著只是使用，否則可能會出現錯誤**
 
-```python
+```shell
 python main.py
 ```
 
