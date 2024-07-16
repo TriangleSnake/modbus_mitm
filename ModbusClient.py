@@ -65,7 +65,7 @@ def packet_callback(packet):
         print(modified_packet.summary())
 
         # Send the modified packet
-        send(modified_packet, verbose=False)
+        send(packet, verbose=False)
 
 def start_blank():
     # Sniff packets and invoke packet_callback for each packet
