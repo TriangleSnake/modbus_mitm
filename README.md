@@ -2,7 +2,7 @@
 
 ---
 
-modbus_mitm 是一個工業控制（OT）網路連線的攻擊工具包，針對 modbus 協議進行竊聽與竄改等功能等功能
+modbus_mitm 是一個工業控制（OT）網路連線的攻擊工具包，執行於 Linux 環境中，針對 modbus 協議進行竊聽與竄改等功能等功能
 
 功能：
 
@@ -30,6 +30,7 @@ modbus_mitm 是一個工業控制（OT）網路連線的攻擊工具包，針對
 
 #### Requirement （外部工具）：
 
+- linux 指令
 - nmap
 - ettercap
 
@@ -43,7 +44,7 @@ python main.py
 
 執行後將會開啟下方視窗
 
-![](/home/hicat/.config/marktext/images/2024-07-15-23-55-49-image.png)
+![](2024-07-15-23-55-49-image.png)
 
 啟動後選擇 interface 並按 Scan IP，左下角的 Ready 會轉成 Scanning...，等到變回Ready即可在 Server 和 Client 選擇掃描到的 IP。
 
