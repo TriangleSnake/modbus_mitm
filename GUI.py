@@ -122,7 +122,7 @@ class GUI(tk.Tk):
             if self.tmp_value_entry is None:
                 self.value_entry[i].insert(0, "0")
             else:
-                self.value_entry[i].insert(0, str(bool(self.tmp_value_entry[i])))
+                self.value_entry[i].insert(0, str(self.tmp_value_entry[i]))
             self.id_labels[i].pack(side=tk.LEFT, padx=(10, 5), pady=10)
             self.value_entry[i].pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 10), pady=10)
             if j == 3:
