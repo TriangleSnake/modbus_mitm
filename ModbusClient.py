@@ -20,24 +20,32 @@ class ModbusClientClass:
             print("Status: No connected")
 
     def read_coils(self, coil_bound):
-        if self.client.is_open:
+    	self.client.open()
+    	if self.client.is_open:
             coils = self.client.read_coils(bit_addr=coil_bound[0], bit_nb=coil_bound[1]-coil_bound[0])
+            self.client.close()
             return coils
 
     def write_coil(self, index, value):
         try:
+            self.client.open()
             self.client.write_single_coil(index, value)
+            self.client.close()
         except Exception as e:
             print(f"Error: {e}")
 
     def read_regs(self, reg_bound):
+        self.client.open()
         if self.client.is_open:
             regs = self.client.read_holding_registers(reg_addr=reg_bound[0], reg_nb=reg_bound[1]-reg_bound[0])
+            self.client.close()
             return regs
 
     def write_reg(self, index, value):
         try:
+            self.client.open()
             self.client.write_single_register(index, value)
+            self.client.close()
         except Exception as e:
             print(f"Error: {e}")
 
